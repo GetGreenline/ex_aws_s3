@@ -1104,7 +1104,7 @@ defmodule ExAws.S3 do
 
     headers =
       case opts do
-        %{copy_source_range: first..last} ->
+        %{copy_source_range: first..last//_} ->
           Map.put(headers, "x-amz-copy-source-range", "bytes=#{first}-#{last}")
 
         _ ->
